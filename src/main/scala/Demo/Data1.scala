@@ -1,5 +1,5 @@
 package Demo
-
+import java.util.Stack
 
 
 
@@ -7,28 +7,33 @@ object Data1 {
 
 
   def main(args:Array[String]): Unit ={
-    var x: LinkedList = new LinkedList()
-    x.addlast(10)
-    x.addlast(10)
-    x.addlast(10)
-    println(x.Size())
-    x.deleteLast()
-    x.deleteLast()
-    x.deleteLast()
-    println(x.Size())
+    val x: StringReverser = new StringReverser()
+    println(x.BalancedExpression("[(())]"))
 
-    x.addlast(20)
-    x.addlast(30)
-    x.addlast(40)
-    //x.addlast(50)
-    //x.reverse()
-    x.toreverse()
-    val b: Array[Int] = x.toArray()
-    println(b.toList)
-
-
-    println(x)
-
+    val y: NewStack = new NewStack()
+    y.push(10)
+    y.push(20)
+    y.push(30)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(40)
+    y.push(50)
+    println(y.isEmpty())
+    println(y.peek())
+    println(y)
 
 
 

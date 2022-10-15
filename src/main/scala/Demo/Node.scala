@@ -41,6 +41,13 @@ else{
   first = current.ref
 }
 
+while(a.ref!=null){
+  length += 1
+  a = a.ref
+  if(a.ref != null) {
+    a = a.ref
+    length += 1
+    b = b.ref
 
 
  */

@@ -1,5 +1,6 @@
 package Demo
 
+import javax.management.openmbean.InvalidKeyException
 import scala.util.control.Breaks.break
 
 class Node(val value: Int) {
@@ -157,6 +158,83 @@ class LinkedList {
 
     }
   }
+
+  def getKthFromTheEnd(k: Int): Int = {
+    if(first==null){throw new IllegalStateException()}
+    else
+    {
+      if (!(k >= 1)) throw new IllegalArgumentException()
+    else if (k == 1) last.value
+
+    else {
+      var fpointer: Node = first
+      var spointer: Node = first
+      val distance: Int = k - 1
+
+      for (i <- 1 to distance) {
+        if (fpointer.ref != null) {
+          fpointer = fpointer.ref
+        }
+        else {
+          throw new IllegalArgumentException()
+        }
+      }
+
+      while (fpointer.ref != null) {
+        fpointer = fpointer.ref
+        spointer = spointer.ref
+      }
+      spointer.value
+    }
+  }
+  }
+
+def printMiddle(): Unit ={
+  if(first==null){throw new IllegalStateException()}
+  else{
+  var a: Node = first
+  var b: Node =first
+  //var length: Int = 1
+  while(a.ref!=last && a!=last){
+    //length += 1
+    a = a.ref
+    a = a.ref
+      //length += 1
+      b = b.ref
+    }
+  if(a.ref == last) {println(b.value.toString+","+b.ref.value.toString)}
+  else {println(b.value.toString)}
+}
+}
+
+  def hasloop(): Boolean = {
+    var answer: Boolean = false
+    if(first==null) answer
+    else{
+      var fast: Node = first
+      var slow: Node = first
+    while (fast.ref != null) {
+      fast = fast.ref
+      if (fast.ref != null) {
+        fast = fast.ref
+        slow = slow.ref
+        if (slow == fast) {
+          answer = true
+          return answer}
+      }
+    }
+    answer
+  }
+  }
+
+
+
+
+
+
+
+
+
 
 
 
